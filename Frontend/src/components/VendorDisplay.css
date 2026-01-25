@@ -1,0 +1,13 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 35px;
+}
+.inside{
+    
+    
+    width:400px;
+    height: 200px;
+    background-color: rgb(244, 132, 244);
+}
