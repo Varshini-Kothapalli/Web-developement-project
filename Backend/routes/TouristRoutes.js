@@ -1,5 +1,5 @@
 import express from "express";
-import TouristPlace from "../../../models/TouristPlaces.js";
+import TouristPlace from "../models/TouristPlaces.js";
 
 const router = express.Router();
 

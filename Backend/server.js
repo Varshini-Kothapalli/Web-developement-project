@@ -1,7 +1,9 @@
 import exp from 'express'
 import { MongoClient,Db } from 'mongodb';
 import cors from "cors";
+import connectDB from "./config/db.js";
 
+connectDB();
 
 
 const app=exp()
@@ -10,7 +12,11 @@ app.use(exp.json())
 app.use(cors());
  
 import { vendorRoute } from './routes/vendorRoutes.js';
+//Routes
+app.use("/api/tourist", TouristRoutes); 
 app.use('/vendor-api',vendorRoute)
+
+//db connection 
 const dbclient=new MongoClient("mongodb://localhost:27017")
 dbclient.connect()
 .then(()=>{
