@@ -1,0 +1,26 @@
+### Get all tourist places
+GET http://localhost:5000/api/tourist
+
+###
+
+### Get places by category (Historical)
+GET http://localhost:5000/api/tourist/category/Historical
+
+###
+
+### Get places by location (Hyderabad)
+GET http://localhost:5000/api/tourist/location/Hyderabad
+
+
+###
+
+### Add a new tourist place
+POST http://localhost:5000/api/tourist
+Content-Type: application/json
+
+{
+  "name": "Golconda Fort",
+  "location": "Hyderabad",
+  "description": "Historic fort",
+  "category": "Adventure"
+}
