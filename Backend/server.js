@@ -12,6 +12,7 @@ app.use(exp.json())
 app.use(cors());
  
 import { vendorRoute } from './routes/vendorRoutes.js';
+import { TouristRoutes } from './routes/TouristRoutes.js';
 //Routes
 app.use("/api/tourist", TouristRoutes); 
 app.use('/vendor-api',vendorRoute)
