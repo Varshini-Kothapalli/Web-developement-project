@@ -13,6 +13,9 @@ app.use(cors());
  
 import { vendorRoute } from './routes/vendorRoutes.js';
 import { TouristRoutes } from './routes/TouristRoutes.js';
+import { budgetRoute } from './routes/budgetplanner.js';
+app.use('/vendor-api',vendorRoute)
+app.use('/budget-api',budgetRoute)
 //Routes
 app.use("/api/tourist", TouristRoutes); 
 app.use('/vendor-api',vendorRoute)
@@ -24,6 +27,8 @@ dbclient.connect()
     const dbobj=dbclient.db('backenddb')
     const vendorscollection=dbobj.collection('vendors')
     app.set("vendorscollection",vendorscollection)
+    const budgetcollection=dbobj.collection('budgetplanner')  
+    app.set("budgetcollection",budgetcollection)
     console.log("Data base connection success")
         app.listen(port,()=>console.log(`Server is listening ${port}`))
 }).

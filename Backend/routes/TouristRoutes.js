@@ -3,20 +3,31 @@ import TouristPlace from "../models/TouristPlaces.js";
 
 const router = express.Router();
 
-// add place
-router.post("/add", async (req, res) => {
-  try {
-    const place = await TouristPlace.create(req.body);
-    res.status(201).json(place);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
-
-
+/**
+ * GET all places
+ */
 router.get("/", async (req, res) => {
   const places = await TouristPlace.find();
   res.json(places);
+});
+
+/**
+ * GET places by category
+ * /api/tourists/category/beach
+ */
+router.get("/category/:category", async (req, res) => {
+  const { category } = req.params;
+  const places = await TouristPlace.find({ category });
+  res.json(places);
+});
+
+
+ // POST add a place
+ 
+router.post("/", async (req, res) => {
+  const place = new TouristPlace(req.body);
+  await place.save();
+  res.status(201).json(place);
 });
 
 export default router;
