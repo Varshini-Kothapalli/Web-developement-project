@@ -1,13 +1,15 @@
-import First from "./components/First";
-import FormsPractice from "./components/FormsPractice";
+import Navbar from './components/Navbar';
+import Mainpage from './components/Mainpage';
+import Places from './components/Places';
 import './App.css'
 function App(){
   
 
   return(
     <div>
- <h1>Hii project</h1>
- <FormsPractice/>
+ <Navbar></Navbar>
+ <Mainpage></Mainpage>
+ <Places></Places>
 
     </div>
    
