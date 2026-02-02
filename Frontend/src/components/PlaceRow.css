@@ -1,0 +1,36 @@
+.place-card {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin: 70px 100px;
+}
+
+/* Reverse layout for even places */
+.place-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image */
+.place-image img {
+  width: 340px;
+  height: 230px;
+  
+ 
+}
+
+/* Text */
+.place-content {
+  max-width: 600px;
+}
+
+.place-content h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.place-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}

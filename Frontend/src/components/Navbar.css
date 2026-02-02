@@ -1,0 +1,79 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+nav {
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+/* Logo section */
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0b2c4d;   /* dark blue */
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Menu items container */
+.items ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Individual menu item */
+.items ol li {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0;
+}
+
+/* Dropdown arrow */
+.items ol li::after {
+  content: " ▼";
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+/* Hover effect */
+.items ol li:hover {
+  color: #0b6efd; /* blue hover */
+}
+
+/* Underline animation */
+.items ol li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #0b6efd;
+  transition: width 0.3s ease;
+}
+
+.items ol li:hover::before {
+  width: 100%;
+}
