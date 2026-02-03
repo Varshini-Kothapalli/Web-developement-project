@@ -1,0 +1,30 @@
+.mainpage {
+  padding-top: 70px;
+}
+
+/* Image wrapper */
+.parent {
+  position: relative;
+}
+
+/* Image */
+.parent img {
+  width: 100%;
+  height: 700px;
+  display: block;
+}
+
+/* Overlay text */
+.child {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.child p {
+  color: white;
+  font-size: 75px;
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.8);
+}
