@@ -29,6 +29,8 @@ dbclient.connect()
     app.set("vendorscollection",vendorscollection)
     const budgetcollection=dbobj.collection('budgetplanner')  
     app.set("budgetcollection",budgetcollection)
+    const placescollection=dbobj.collection('places')
+    app.set("placescollection",placescollection)
     console.log("Data base connection success")
         app.listen(port,()=>console.log(`Server is listening ${port}`))
 }).
