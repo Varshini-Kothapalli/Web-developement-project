@@ -11,7 +11,7 @@ GET http://localhost:8080/api/tourist/category/Nature
 
 
 ### Get places by rating (5 stars)
-GET http://localhost:8080/api/tourist/popularity_score
+# GET http://localhost:8080/api/tourist/popularity_score
 
 ###
 

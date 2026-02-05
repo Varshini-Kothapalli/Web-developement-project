@@ -12,5 +12,5 @@ TouristRoutes.post("/", createPlace);
 TouristRoutes.get("/", getAllPlaces);
 TouristRoutes.get("/category/:category", getPlacesByCategory);
 TouristRoutes.delete("/:id", deletePlace);
-TouristRoutes.get("/popular", getPlacesByscore);
+// TouristRoutes.get("/popular", getPlacesByscore);
 
