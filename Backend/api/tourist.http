@@ -1,21 +1,23 @@
 ### Get all tourist places
-GET http://localhost:5000/api/tourist
+GET http://localhost:8080/api/tourist
 
 ###
 
 ### Get places by category (Historical)
-GET http://localhost:5000/api/tourist/category/Historical
+GET http://localhost:8080/api/tourist/category/Historical
+
+###
+GET http://localhost:8080/api/tourist/category/Nature
+
+
+### Get places by rating (5 stars)
+# GET http://localhost:8080/api/tourist/popularity_score
 
 ###
 
-### Get places by location (Hyderabad)
-GET http://localhost:5000/api/tourist/location/Hyderabad
-
-
-###
 
 ### Add a new tourist place
-POST http://localhost:5000/api/tourist
+POST http://localhost:8080/api/tourist
 Content-Type: application/json
 
 {

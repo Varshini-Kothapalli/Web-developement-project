@@ -3,22 +3,30 @@ import { MongoClient,Db } from 'mongodb';
 import cors from "cors";
 import connectDB from "./config/db.js";
 
-connectDB();
 
+import { TouristRoutes } from "./routes/TouristRoutes.js";
+// app.get("/test", (req, res) => {
+//   res.send("Server is alive");
+// });c
+
+connectDB();
 
 const app=exp()
 const port=8080;
+
 app.use(exp.json())
 app.use(cors());
+app.use("/api/tourist", TouristRoutes);
+
+
  
 import { vendorRoute } from './routes/vendorRoutes.js';
-import { TouristRoutes } from './routes/TouristRoutes.js';
 import { budgetRoute } from './routes/budgetplanner.js';
 app.use('/vendor-api',vendorRoute)
 app.use('/budget-api',budgetRoute)
-//Routes
-app.use("/api/tourist", TouristRoutes); 
-app.use('/vendor-api',vendorRoute)
+
+ 
+
 
 //db connection 
 const dbclient=new MongoClient("mongodb://localhost:27017")
@@ -32,6 +40,7 @@ dbclient.connect()
     const placescollection=dbobj.collection('places')
     app.set("placescollection",placescollection)
     console.log("Data base connection success")
+
         app.listen(port,()=>console.log(`Server is listening ${port}`))
 }).
 catch((err)=>{
@@ -41,6 +50,8 @@ console.log("db connection failed",err)
 app.use((req,res,next)=>{
     res.json({message:"Invalid path",payload:req.path})
 })
+
+
 app.use((err,req,res,next)=>{
     res.json({message:"Error occured",response:err.message})
 })

@@ -1,6 +1,6 @@
 import exp from 'express'
 export const budgetRoute=exp.Router()
-budgetRoute.post("/budgetplanner/:name",async(req,res)=>{
+budgetRoute.post("/budgetplanner",async(req,res)=>{
     const budgetcollection=req.app.get("budgetcollection")
    
     const {plan}=req.body
@@ -24,18 +24,19 @@ budgetRoute.post("/budgetplanner/:name",async(req,res)=>{
     breakdown.push({ 
         place_name:dbplace.place_name,days,total_cost:placetotal}
     )
+}
     // save budget doc
 const doc={
-    user:username,
     plan,
     breakdown,
     total,
     createdAt: new Date()
 }
+    
 await budgetcollection.insertOne(doc)
 res.json({message:"Budget calculated",payload:total,breakdown})
 
-    }
+    
     
 
 

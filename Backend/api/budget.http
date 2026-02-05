@@ -1,0 +1,16 @@
+###
+
+POST http://localhost:8080/budget-api/budgetplanner
+Content-Type: application/json
+
+
+{
+    "plan":[{ 
+        "place_name":"Charminar",
+        "days" : 4
+    },{ 
+    "place_name":"Golconda Fort",
+        "days" : 4
+    }
+    ]
+}
