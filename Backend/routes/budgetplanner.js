@@ -13,17 +13,16 @@ budgetRoute.post("/budgetplanner",async(req,res)=>{
    const { day,places }=dayplan
    if(!places || places.length==0)
     continue
-    const dbplace=placesarray.find(p=>p.place_name==userplace.place_name)
-     //find the placenams in data base according the placenames
-    const placesarray=await budgetcollection.find({place_name:{$in:placenames}}).toArray()
+
+    const placesarray=await budgetcollection.find({place_name:{$in:places}}).toArray()
     let daytotal=0;
     let entrytotal=0;
     let maxfood=0;
     let maxstay=0;
     let maxmic=0;
     let maxtravel=0;
- for(let dbplaces of placesarray){
-    entrytotal+=dbplaces.entry_fee
+ for(let dbplace of placesarray){
+    entrytotal+=dbplace.entry_fee
     if(dbplace.food_per_day>maxfood)
         maxfood=dbplace.food_per_day
          if(dbplace.stay_per_day>maxstay)
