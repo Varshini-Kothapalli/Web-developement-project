@@ -1,6 +1,6 @@
 import React from 'react'
 import PlaceRow from './PlaceRow';
-function Places() {
+function PlacesList() {
     const places = [
   {
     title: "GOLCONDA",
@@ -53,4 +53,4 @@ function Places() {
 
 
 
-export default Places
+export default PlacesList

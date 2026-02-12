@@ -1,15 +1,36 @@
-import Navbar from './components/Navbar';
+import { createBrowserRouter,RouterProvider } from 'react-router';
+import RootLayout from './components/RootLayout';
 import Mainpage from './components/Mainpage';
-import Places from './components/Places';
+import PlacesList from './components/PlacesList';
+import BudgetPlanner from './components/BudgetPlanner';
 import './App.css'
+function Homepage(){
+  return(
+    <div>
+      <Mainpage />
+      <PlacesList />
+    </div>
+  )
+}
 function App(){
-  
+  const router=createBrowserRouter([
+    {path:"/",
+      element:<RootLayout/>,
+      children:[
+      {
+        path:"",
+        element:<Homepage/>
+      },
+        {
+          path: "budget-planner",
+          element: <BudgetPlanner />
+        }]
+    }
+  ])
 
   return(
     <div>
- <Navbar></Navbar>
- <Mainpage></Mainpage>
- <Places></Places>
+      <RouterProvider router={router}></RouterProvider>
 
     </div>
    

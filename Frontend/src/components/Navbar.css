@@ -52,14 +52,13 @@ nav {
 
 /* Dropdown arrow */
 .items ol li::after {
-  content: " ▼";
   font-size: 10px;
   margin-left: 4px;
 }
 
 /* Hover effect */
 .items ol li:hover {
-  color: #0b6efd; /* blue hover */
+  color: #598cd4; 
 }
 
 /* Underline animation */
@@ -70,7 +69,7 @@ nav {
   bottom: -6px;
   width: 0%;
   height: 2px;
-  background-color: #0b6efd;
+  background-color: #1371f5;
   transition: width 0.3s ease;
 }
 
