@@ -64,9 +64,9 @@ function BudgetPlanner() {
 
   return (
     <div className="p-5">
-      <h2>Budget Planner</h2>
+      <h2 className="mt-3">Budget Planner</h2>
 
-      <div style={{ marginBottom: "20px" }}>
+      <div className="mt-3">
         <label>Trip Duration (Days): </label>
         <input
           type="number"
