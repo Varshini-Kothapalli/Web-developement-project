@@ -41,13 +41,19 @@ export const deletePlace = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-export const getPlacesByscore= async (req, res) => {
-  try {
-    const places = await TouristPlace.find({
-      popularity_score: req.params.popularity_score
-    });
-    res.json(places);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
+// export const getPlacesByPopularity = async (req, res) => {
+//   try {
+    
+
+//     const places = await db
+//       .collection("touristPlaces")
+//       .find({})
+//       .sort({ popularity_score: -1 }) 
+//       .toArray();
+
+//     res.status(200).json(places);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: "Server Error" });
+//   }
+// };

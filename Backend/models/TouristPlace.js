@@ -5,7 +5,8 @@ const touristPlaceSchema = new mongoose.Schema({
   category: String,
   location: String,
   description: String,
-  rating: Number
+  rating: Number,
+  image: String,
 });
 
 export default mongoose.model("TouristPlace", touristPlaceSchema);
