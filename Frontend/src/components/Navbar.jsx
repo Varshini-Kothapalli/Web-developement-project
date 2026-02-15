@@ -7,18 +7,21 @@ function Navbar() {
   return (
     <div>
         <nav>
-            <div className="logo">HYDERABAD</div>
+            <div className="logo" onClick={()=>{navigate("/")}} style={{cursor:"pointer"}}>
+                HYDERABAD</div>
             <div className="items">
                 <ol>
-                    <li>About Hyderabad </li>
                 <li>
                 <Dropdown>
                 <Dropdown.Toggle id="dropdown">
-                    Plan your trip
+                    Places to visit
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                <Dropdown.Item onClick={() => navigate("/budget-planner")}>Plan according to places</Dropdown.Item>
-                <Dropdown.Item>Nature</Dropdown.Item>
+                <Dropdown.Item>Charminar</Dropdown.Item>
+                <Dropdown.Item>Golconda</Dropdown.Item>
+                <Dropdown.Item>Ramoji Film City</Dropdown.Item>
+                <Dropdown.Item>Wonderla</Dropdown.Item>
+                <Dropdown.Item onClick={()=>{navigate("/places")}}>Show All</Dropdown.Item>
                 </Dropdown.Menu>
                 </Dropdown>
                 </li>
@@ -28,24 +31,38 @@ function Navbar() {
                     Things to do
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                <Dropdown.Item>Boating</Dropdown.Item>
-                <Dropdown.Item>Nature</Dropdown.Item>
-                <Dropdown.Item>Adventure</Dropdown.Item>
+                <Dropdown.Item onClick={()=>navigate("/category/Historical")}>Historic sites and monuments</Dropdown.Item>
+                <Dropdown.Item onClick={()=>navigate("/category/Nature")}>Nature</Dropdown.Item>
+                <Dropdown.Item onClick={()=>navigate("/category/Entertainment")}>Entertainment</Dropdown.Item>
+                <Dropdown.Item onClick={()=>{navigate("/category/Museum")}}>Museum</Dropdown.Item>
+                <Dropdown.Item>Hyderabadi Food</Dropdown.Item>
+                </Dropdown.Menu>
+                </Dropdown> 
+                </li>
+                <li>
+                <Dropdown>
+                <Dropdown.Toggle id="dropdown">
+                    Plan your trip
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                <Dropdown.Item onClick={() => navigate("/budget-planner")}>Trip by Budget</Dropdown.Item>
+                <Dropdown.Item>Trip by Places</Dropdown.Item>
                 </Dropdown.Menu>
                 </Dropdown>
                 </li>
                 <li>
                 <Dropdown>
                 <Dropdown.Toggle id="dropdown">
-                    Places to visit
+                    About Hyderabad
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                <Dropdown.Item>Historical</Dropdown.Item>
-                <Dropdown.Item>Nature</Dropdown.Item>
-                <Dropdown.Item>Adventure</Dropdown.Item>
+                <Dropdown.Item>City Highlights</Dropdown.Item>
+                <Dropdown.Item>Nightlife & Hangouts</Dropdown.Item>
+                <Dropdown.Item>Shopping & Bazaars</Dropdown.Item>
+                <Dropdown.Item>Spiritual</Dropdown.Item>
                 </Dropdown.Menu>
                 </Dropdown>
-                    </li>
+                </li>
                 </ol>
             </div>
         </nav>

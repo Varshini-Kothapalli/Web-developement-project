@@ -42,8 +42,6 @@ nav {
 
 /* Individual menu item */
 .items ol li {
-  font-size: 15px;
-  font-weight: 500;
   color: #1a1a1a;
   cursor: pointer;
   position: relative;
